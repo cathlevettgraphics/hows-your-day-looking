@@ -24,6 +24,7 @@ const btnWeather = document.getElementById('btn-weather');
 
 // Get user input on click
 btnWeather.addEventListener('click', (e) => {
+  e.preventDefault();
   // Get city and pass to API call
   const citySearch = inputWeather.value;
   // constrcut the api call
@@ -59,6 +60,7 @@ const btnNews = document.getElementById('btn-news');
 
 // Get user input on click
 btnNews.addEventListener('click', (e) => {
+  e.preventDefault();
   // Get city and pass to API call
   const newsSearch = inputNews.value;
   // constrcut the api call
@@ -94,6 +96,8 @@ const btnFood = document.getElementById('btn-food');
 
 // Get user input on click
 btnFood.addEventListener('click', (e) => {
+  e.preventDefault();
+
   const foodSearch = inputFood.value;
   const foodAPIcall = `https://www.themealdb.com/api/json/v1/${foodAPI}/search.php?s=${foodSearch}`;
 
