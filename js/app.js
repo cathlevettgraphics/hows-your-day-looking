@@ -4,23 +4,14 @@
  *
  ********************/
 
-//  I've chosen to not persist the states. They are a;; in storage as needed
-document.addEventListener("DOMContentLoaded", () => {
-  // renderWeatherList(weather);
-  // renderNewsList(articles);
-  // renderFoodList(food);
-});
-
 /********************
  *
  * IMPORT WEATHER APP FUNCTIONALITY
  *
  ********************/
 
-import { fetchWeather } from "./weatherApp.js";
-import { renderWeatherList } from "./weatherApp.js";
-import { weather } from "./weatherApp.js";
-import { weatherAPI } from "./api-keys.js";
+import { fetchWeather } from './weatherApp.js';
+import { weatherAPI } from './api-keys.js';
 
 /********************
  *
@@ -28,11 +19,11 @@ import { weatherAPI } from "./api-keys.js";
  *
  ********************/
 
-const inputWeather = document.getElementById("search-city");
-const btnWeather = document.getElementById("btn-weather");
+const inputWeather = document.getElementById('search-city');
+const btnWeather = document.getElementById('btn-weather');
 
 // Get user input on click
-btnWeather.addEventListener("click", (e) => {
+btnWeather.addEventListener('click', (e) => {
   // Get city and pass to API call
   const citySearch = inputWeather.value;
   // constrcut the api call
@@ -42,9 +33,9 @@ btnWeather.addEventListener("click", (e) => {
   if (inputWeather.value) {
     // Fetch data but clear first
     fetchWeather(weatherAPICall);
-    inputWeather.value = "";
+    inputWeather.value = '';
   } else {
-    throw new Error("please select a city");
+    throw new Error('please select a city');
   }
 });
 
@@ -54,10 +45,8 @@ btnWeather.addEventListener("click", (e) => {
  *
  ********************/
 
-import { fetchNews } from "./newsApp.js";
-import { renderNewsList } from "./newsApp.js";
-import { articles } from "./newsApp.js";
-import { newsAPI } from "./api-keys.js";
+import { fetchNews } from './newsApp.js';
+import { newsAPI } from './api-keys.js';
 
 /********************
  *
@@ -65,11 +54,11 @@ import { newsAPI } from "./api-keys.js";
  *
  ********************/
 
-const inputNews = document.getElementById("search-news");
-const btnNews = document.getElementById("btn-news");
+const inputNews = document.getElementById('search-news');
+const btnNews = document.getElementById('btn-news');
 
 // Get user input on click
-btnNews.addEventListener("click", (e) => {
+btnNews.addEventListener('click', (e) => {
   // Get city and pass to API call
   const newsSearch = inputNews.value;
   // constrcut the api call
@@ -79,9 +68,9 @@ btnNews.addEventListener("click", (e) => {
   if (inputNews.value) {
     // Fetch data
     fetchNews(newsAPICall);
-    inputNews.value = "";
+    inputNews.value = '';
   } else {
-    throw new Error("please select a topic");
+    throw new Error('please select a topic');
   }
 });
 
@@ -91,9 +80,8 @@ btnNews.addEventListener("click", (e) => {
  *
  ********************/
 
-import { fetchFood, renderFoodList } from "./foodApp.js";
-import { foodAPI } from "./api-keys.js";
-import { food } from "./foodApp.js";
+import { fetchFood, renderFoodList } from './foodApp.js';
+import { foodAPI } from './api-keys.js';
 
 /********************
  *
@@ -101,18 +89,18 @@ import { food } from "./foodApp.js";
  *
  ********************/
 
-const inputFood = document.getElementById("search-food");
-const btnFood = document.getElementById("btn-food");
+const inputFood = document.getElementById('search-food');
+const btnFood = document.getElementById('btn-food');
 
 // Get user input on click
-btnFood.addEventListener("click", (e) => {
+btnFood.addEventListener('click', (e) => {
   const foodSearch = inputFood.value;
   const foodAPIcall = `https://www.themealdb.com/api/json/v1/${foodAPI}/search.php?s=${foodSearch}`;
 
   if (inputFood.value) {
     fetchFood(foodAPIcall);
-    inputFood.value = "";
+    inputFood.value = '';
   } else {
-    throw new Error("please select a food!");
+    throw new Error('please select a food!');
   }
 });
